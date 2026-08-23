@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-labelledby="title desc">
+  <title id="title">大型犬と暮らす家のDIYイラスト</title>
+  <desc id="desc">木材で犬用の収納ベンチを作る道具と大型犬を描いたイラスト</desc>
+  <rect width="720" height="430" fill="#d5d9ce"/>
+  <path d="M0 350h720v80H0z" fill="#eef0ea"/>
+  <rect x="108" y="207" width="363" height="119" rx="4" fill="#c98e5b" stroke="#283532" stroke-width="8"/>
+  <path d="M151 326v53m278-53v53M108 250h363" stroke="#283532" stroke-width="9"/>
+  <circle cx="392" cy="287" r="13" fill="#f6dc8b" stroke="#283532" stroke-width="5"/>
+  <path d="M91 204h398" stroke="#283532" stroke-linecap="round" stroke-width="14"/>
+  <path d="M182 178l64-70 25 23-65 70" fill="#d4774f" stroke="#283532" stroke-linejoin="round" stroke-width="7"/>
+  <path d="M237 95l22-23 38 36-23 23" fill="#eef0ea" stroke="#283532" stroke-width="7"/>
+  <path d="M523 333c-15-58 7-111 58-121 39-8 79 13 94 50 9 22 8 45 3 70" fill="#7a8790" stroke="#283532" stroke-width="8"/>
+  <path d="M570 216l-27-58 60 39m54 26l33-50-7 72" fill="#7a8790" stroke="#283532" stroke-linejoin="round" stroke-width="8"/>
+  <circle cx="572" cy="252" r="6" fill="#283532"/><circle cx="646" cy="252" r="6" fill="#283532"/>
+  <path d="M592 277c16 13 32 13 49 0" fill="none" stroke="#283532" stroke-linecap="round" stroke-width="7"/>
+  <path d="M514 333h172c15 0 25 15 29 43H490c3-28 11-43 24-43z" fill="#7a8790" stroke="#283532" stroke-width="8"/>
+</svg>

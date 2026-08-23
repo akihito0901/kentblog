@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-labelledby="title desc">
+  <title id="title">大型犬のドッグフード選びのイラスト</title>
+  <desc id="desc">大きな犬とフードボウル、原材料を連想する食材を描いたイラスト</desc>
+  <rect width="720" height="430" fill="#efd9bd"/>
+  <path d="M0 344c150-34 282-31 404 6 101 30 207 31 316-7v87H0z" fill="#f8eee0"/>
+  <path d="M174 318c-19-76 15-153 90-169 54-11 108 14 139 60 21 31 25 69 17 112" fill="#ccb08b" stroke="#283532" stroke-width="8"/>
+  <path d="M253 160l-29-73 75 49m82 25l57-65-24 95" fill="#ccb08b" stroke="#283532" stroke-linejoin="round" stroke-width="8"/>
+  <ellipse cx="332" cy="215" rx="39" ry="30" fill="#f1dfc9"/>
+  <circle cx="271" cy="194" r="7" fill="#283532"/><circle cx="370" cy="194" r="7" fill="#283532"/>
+  <path d="M323 218c10 8 20 8 30 0m-15 7v17m-30 0c20 18 41 19 62 0" fill="none" stroke="#283532" stroke-linecap="round" stroke-width="7"/>
+  <path d="M134 321h322c29 0 48 19 56 54H83c8-36 24-54 51-54z" fill="#ccb08b" stroke="#283532" stroke-width="8"/>
+  <path d="M474 288h163l-21 88H495z" fill="#78a08f" stroke="#283532" stroke-linejoin="round" stroke-width="8"/>
+  <ellipse cx="555" cy="288" rx="82" ry="22" fill="#fff" stroke="#283532" stroke-width="8"/>
+  <g fill="#a46f4e"><circle cx="518" cy="283" r="9"/><circle cx="548" cy="291" r="9"/><circle cx="579" cy="281" r="9"/><circle cx="603" cy="291" r="8"/></g>
+  <path d="M528 165c-25-18-29-42-10-70 30 8 43 30 30 62m33 29c24-33 51-43 80-27-3 34-28 51-68 47" fill="#78a08f" stroke="#283532" stroke-width="6"/>
+</svg>

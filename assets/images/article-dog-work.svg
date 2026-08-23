@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" role="img" aria-labelledby="title desc">
+  <title id="title">大型犬とフリーランスの一日</title>
+  <desc id="desc">朝の光が入る仕事部屋で、パソコンに向かう人と足元の大型犬を描いたイラスト</desc>
+  <rect width="860" height="480" fill="#edf3f0"/>
+  <rect x="58" y="58" width="744" height="352" rx="6" fill="#fff"/>
+  <rect x="102" y="95" width="190" height="174" fill="#d7eee6" stroke="#283532" stroke-width="8"/>
+  <path d="M197 99v166M106 181h182" stroke="#283532" stroke-width="7"/>
+  <circle cx="233" cy="143" r="28" fill="#f6dc8b"/>
+  <rect x="333" y="191" width="244" height="138" rx="7" fill="#283532"/>
+  <rect x="352" y="210" width="206" height="100" fill="#b9d8cd"/>
+  <path d="M380 278l40-39 34 21 62-54" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/>
+  <path d="M302 329h307l34 30H269z" fill="#53645f"/>
+  <path d="M583 358c-11-46 9-90 50-100 34-8 69 11 83 42 8 18 8 37 4 57" fill="#a77a58" stroke="#283532" stroke-width="7"/>
+  <path d="M627 263l-21-49 49 34m47 23l29-43-7 62" fill="#a77a58" stroke="#283532" stroke-linejoin="round" stroke-width="7"/>
+  <circle cx="628" cy="289" r="5" fill="#283532"/><circle cx="690" cy="289" r="5" fill="#283532"/>
+  <path d="M642 310c14 11 28 11 42 0" fill="none" stroke="#283532" stroke-linecap="round" stroke-width="6"/>
+  <path d="M573 357h157c18 0 31 14 39 43H541c5-27 16-43 32-43z" fill="#a77a58" stroke="#283532" stroke-width="7"/>
+  <path d="M137 354c-6-47 6-83 35-108m-28 64c-37-14-50-38-40-68 34 4 50 28 40 68zm20-29c32-19 42-44 31-73-30 7-44 31-31 73z" fill="#78a08f" stroke="#283532" stroke-width="6"/>
+</svg>

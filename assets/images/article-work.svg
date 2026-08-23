@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" role="img" aria-labelledby="title desc">
+  <title id="title">静かな仕事場のイラスト</title>
+  <desc id="desc">落ち着いたデスク、ノート、コーヒー、植物を描いたイラスト</desc>
+  <rect width="860" height="480" fill="#eef2f3"/>
+  <rect x="90" y="88" width="680" height="304" rx="6" fill="#fff"/>
+  <path d="M108 356h644" stroke="#24343d" stroke-width="8"/>
+  <rect x="246" y="142" width="306" height="180" rx="7" fill="#24343d"/>
+  <rect x="264" y="160" width="270" height="144" fill="#9fd7ee"/>
+  <path d="M304 261l47-46 44 27 75-68" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+  <path d="M208 322h382l38 34H170z" fill="#4a5d66"/>
+  <circle cx="658" cy="279" r="42" fill="#f6db6f" stroke="#24343d" stroke-width="7"/>
+  <path d="M700 283c28-2 32 38 3 40" fill="none" stroke="#24343d" stroke-width="7"/>
+  <path d="M166 312c-8-54 4-101 35-139m-27 74c-42-18-57-45-46-79 37 7 55 34 46 79zm17-32c34-23 44-51 31-83-32 10-46 37-31 83z" fill="#76c7b0" stroke="#24343d" stroke-width="6"/>
+</svg>

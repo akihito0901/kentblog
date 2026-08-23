@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-labelledby="title desc">
+  <title id="title">AIと仕組み化のイラスト</title>
+  <desc id="desc">淡い緑の背景に中央の球体と連結された情報ノードを描いた抽象イラスト</desc>
+  <rect width="720" height="430" fill="#cfece2"/>
+  <circle cx="360" cy="214" r="105" fill="#ffffff" stroke="#24343d" stroke-width="8"/>
+  <circle cx="360" cy="214" r="54" fill="#76c7b0"/>
+  <path d="M343 208c16-24 44-12 35 12-6 16-27 12-27 31m0 22v2" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="13"/>
+  <g fill="none" stroke="#24343d" stroke-width="6">
+    <path d="M270 159L169 100m281 59l101-59M257 248l-121 45m327-45l121 45M315 305l-61 79m151-79l61 79"/>
+  </g>
+  <g fill="#f7d782" stroke="#24343d" stroke-width="6">
+    <circle cx="156" cy="92" r="27"/><circle cx="564" cy="92" r="27"/>
+    <circle cx="121" cy="299" r="27"/><circle cx="599" cy="299" r="27"/>
+    <circle cx="243" cy="393" r="27"/><circle cx="477" cy="393" r="27"/>
+  </g>
+  <g fill="#24343d">
+    <circle cx="156" cy="92" r="7"/><circle cx="564" cy="92" r="7"/>
+    <circle cx="121" cy="299" r="7"/><circle cx="599" cy="299" r="7"/>
+    <circle cx="243" cy="393" r="7"/><circle cx="477" cy="393" r="7"/>
+  </g>
+</svg>

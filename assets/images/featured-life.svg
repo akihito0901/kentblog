@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-labelledby="title desc">
+  <title id="title">余白のある暮らしのイラスト</title>
+  <desc id="desc">黄色い背景に椅子、植物、窓辺の光を描いた抽象イラスト</desc>
+  <rect width="720" height="430" fill="#f6db6f"/>
+  <rect x="74" y="64" width="236" height="226" rx="4" fill="#fff9df" stroke="#24343d" stroke-width="8"/>
+  <path d="M192 68v218M78 177h228" stroke="#24343d" stroke-width="7"/>
+  <circle cx="234" cy="124" r="31" fill="#e26f4b"/>
+  <path d="M96 265c51-42 93-39 126-5 31-38 63-39 82-20v50H78z" fill="#9fd7ee"/>
+  <path d="M439 326v-91c0-35 29-64 64-64h18c35 0 64 29 64 64v91" fill="#fff" stroke="#24343d" stroke-width="8"/>
+  <path d="M420 326h184m-148 0l-15 64m127-64l15 64" stroke="#24343d" stroke-linecap="round" stroke-width="10"/>
+  <path d="M374 333c-17-75-10-139 20-191m-17 111c-47-28-65-62-54-102 43 7 66 42 54 102zm12-45c45-26 61-60 49-99-39 8-58 42-49 99z" fill="#76c7b0" stroke="#24343d" stroke-linejoin="round" stroke-width="6"/>
+  <rect x="340" y="326" width="96" height="66" rx="4" fill="#e26f4b" stroke="#24343d" stroke-width="7"/>
+</svg>

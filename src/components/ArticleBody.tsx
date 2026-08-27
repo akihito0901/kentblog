@@ -25,6 +25,46 @@ const components: PortableTextComponents = {
   },
 }
 
+function getBlockText(block: Record<string, unknown>) {
+  if (!Array.isArray(block.children)) return ''
+
+  return block.children
+    .map((child) => {
+      if (!child || typeof child !== 'object' || !('text' in child)) return ''
+      return typeof child.text === 'string' ? child.text : ''
+    })
+    .join('')
+    .trim()
+}
+
 export function ArticleBody({value}: {value: Array<Record<string, unknown>>}) {
-  return <PortableText value={value} components={components} />
+  const [firstBlock, ...remainingBlocks] = value
+  const openingLine = firstBlock ? getBlockText(firstBlock) : ''
+  const hasOpeningQuestion =
+    firstBlock?._type === 'block' &&
+    firstBlock.style === 'normal' &&
+    openingLine.startsWith('「') &&
+    openingLine.endsWith('」')
+
+  return (
+    <>
+      {hasOpeningQuestion && (
+        <aside className="article-question" aria-label="読者の悩み">
+          <Image
+            className="article-question-image"
+            src="/images/profile-kent-dog.svg"
+            alt=""
+            width={116}
+            height={116}
+            sizes="(max-width: 640px) 76px, 116px"
+          />
+          <p>{openingLine}</p>
+        </aside>
+      )}
+      <PortableText
+        value={hasOpeningQuestion ? remainingBlocks : value}
+        components={components}
+      />
+    </>
+  )
 }

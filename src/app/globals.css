@@ -42,6 +42,11 @@ svg {
   max-width: 100%;
 }
 
+video,
+iframe {
+  max-width: 100%;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -305,6 +310,14 @@ input {
   grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
   align-items: start;
   gap: 30px;
+}
+
+.content-column,
+.sidebar,
+.article-page,
+.article-body,
+.instagram-profile > div {
+  min-width: 0;
 }
 
 .content-column,
@@ -669,6 +682,7 @@ input {
   margin: -10px 0 22px;
   color: #8f9699;
   font-size: 11px;
+  overflow-wrap: anywhere;
 }
 
 .breadcrumb span {
@@ -726,6 +740,21 @@ input {
 
 .article-body p {
   margin: 0 0 1.65em;
+}
+
+.article-body p,
+.article-body li,
+.article-body h2,
+.article-body h3,
+.article-body blockquote,
+.article-body a {
+  overflow-wrap: anywhere;
+}
+
+.article-body pre {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .article-question {
@@ -1128,23 +1157,8 @@ input {
 }
 
 @media (max-width: 900px) {
-  .content-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .sidebar-section:last-child,
-  .newsletter {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 720px) {
   .container {
-    width: min(calc(100% - 28px), var(--max-width));
+    width: min(calc(100% - 36px), var(--max-width));
   }
 
   .site-header {
@@ -1159,7 +1173,7 @@ input {
 
   .brand-name {
     color: #fff;
-    font-size: 29px;
+    font-size: 31px;
   }
 
   .brand-tagline {
@@ -1206,6 +1220,44 @@ input {
     height: auto;
   }
 
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .featured-card:nth-child(3):last-child {
+    grid-column: 1 / -1;
+    width: min(100%, calc((100% - 24px) / 2));
+    justify-self: center;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sidebar-section:last-child,
+  .newsletter {
+    grid-column: 1 / -1;
+  }
+
+  .article-page {
+    padding: clamp(34px, 6vw, 48px);
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    width: min(calc(100% - 28px), var(--max-width));
+  }
+
+  .brand-name {
+    font-size: 29px;
+  }
+
   .main-area {
     padding: 26px 0 60px;
   }
@@ -1214,6 +1266,11 @@ input {
     grid-template-columns: 1fr;
     gap: 20px;
     margin-bottom: 28px;
+  }
+
+  .featured-card:nth-child(3):last-child {
+    grid-column: auto;
+    width: 100%;
   }
 
   .featured-body {
@@ -1353,6 +1410,191 @@ input {
 
   .instagram-stats dt {
     font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(calc(100% - 20px), var(--max-width));
+  }
+
+  .header-inner {
+    min-height: 62px;
+  }
+
+  .brand-name {
+    font-size: 27px;
+  }
+
+  .main-area {
+    padding: 18px 0 46px;
+  }
+
+  .featured-body {
+    min-height: 0;
+    padding: 22px 18px;
+  }
+
+  .section-heading {
+    padding: 21px 18px 18px;
+  }
+
+  .post-list {
+    padding: 0 18px;
+  }
+
+  .post-item {
+    padding: 28px 0;
+  }
+
+  .sidebar-section,
+  .newsletter {
+    padding: 26px 20px;
+  }
+
+  .breadcrumb {
+    margin: 0 0 14px;
+    font-size: 10px;
+    line-height: 1.7;
+  }
+
+  .article-page {
+    padding: 24px 16px;
+  }
+
+  .article-header {
+    margin-bottom: 26px;
+  }
+
+  .article-title {
+    margin-top: 9px;
+    font-size: clamp(24px, 7.5vw, 27px);
+    line-height: 1.5;
+  }
+
+  .article-lead {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .article-hero {
+    margin-bottom: 30px;
+  }
+
+  .article-body {
+    font-size: 16px;
+    line-height: 1.95;
+    letter-spacing: 0;
+  }
+
+  .article-body > h2 {
+    margin-top: 2.7em;
+    padding-left: 31px;
+    font-size: 21px;
+  }
+
+  .article-body > h2::before {
+    left: 2px;
+    width: 15px;
+    height: 8px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+  }
+
+  .article-body > h3 {
+    margin-top: 2.2em;
+    padding-left: 29px;
+    font-size: 19px;
+  }
+
+  .article-body > h3::before {
+    left: 2px;
+    width: 13px;
+    height: 7px;
+  }
+
+  .article-question {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 12px;
+    padding: 18px 12px;
+  }
+
+  .article-question-image {
+    width: 56px;
+    height: 56px;
+  }
+
+  .article-question p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .article-body ul,
+  .article-body ol {
+    padding: 18px 14px 18px 34px;
+  }
+
+  .article-body blockquote {
+    padding: 38px 16px 22px 40px;
+  }
+
+  .article-body blockquote::before {
+    left: 11px;
+    font-size: 44px;
+  }
+
+  .article-cta {
+    margin-top: 38px;
+    padding: 22px 16px;
+  }
+
+  .article-cta h2 {
+    font-size: 20px;
+  }
+
+  .button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .instagram-cta {
+    padding: 22px 16px;
+  }
+
+  .instagram-profile {
+    gap: 12px;
+  }
+
+  .instagram-avatar {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+
+  .instagram-profile h2 {
+    font-size: 19px;
+    overflow-wrap: anywhere;
+  }
+
+  .instagram-stats {
+    margin: 21px 0 19px;
+  }
+
+  .instagram-stats dt {
+    font-size: 15px;
+  }
+
+  .instagram-stats dd {
+    font-size: 9px;
+  }
+
+  .instagram-button {
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
   }
 }
 

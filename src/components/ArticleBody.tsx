@@ -2,6 +2,28 @@ import Image from 'next/image'
 import {PortableText, type PortableTextComponents} from '@portabletext/react'
 import {urlFor} from '@/sanity/image'
 
+const legacyHosts = new Set([
+  'kentblog.vercel.app',
+  'kentblog-git-sanity-migration-akihito0901s-projects.vercel.app',
+])
+
+function getLinkProps(href?: string) {
+  if (!href) return {href: '#'}
+
+  try {
+    const url = new URL(href)
+    if (legacyHosts.has(url.hostname)) {
+      return {href: `${url.pathname}${url.search}${url.hash}`}
+    }
+  } catch {
+    // Relative URLs are already safe to use as-is.
+  }
+
+  if (href.startsWith('/')) return {href}
+
+  return {href, target: '_blank', rel: 'noreferrer'}
+}
+
 const components: PortableTextComponents = {
   types: {
     image: ({value}) => {
@@ -19,9 +41,7 @@ const components: PortableTextComponents = {
     },
   },
   marks: {
-    link: ({children, value}) => (
-      <a href={value?.href} target="_blank" rel="noreferrer">{children}</a>
-    ),
+    link: ({children, value}) => <a {...getLinkProps(value?.href)}>{children}</a>,
   },
 }
 

@@ -6,7 +6,7 @@
 
 公開後は、ブログURLの末尾に `/studio` を付けて開きます。
 
-例：`https://kentblog.vercel.app/studio`
+例：`https://あなたの独自ドメイン/studio`
 
 1. Googleでログインする
 2. 「記事」を押す
@@ -29,5 +29,14 @@ npm run dev
 
 - ブログ：`http://localhost:3000`
 - 編集室：`http://localhost:3000/studio`
+
+## Cloudflare Workersへデプロイ
+
+```bash
+npm run preview
+npm run deploy
+```
+
+Cloudflareへ初回デプロイした後、発行された `workers.dev` URLと独自ドメインをSanityのCORS originsへ追加してください。これで `/studio` から記事を編集・公開できます。
 
 環境変数は `.env.example` を参考に `.env.local` へ設定します。`.env.local` はGitへ保存しません。

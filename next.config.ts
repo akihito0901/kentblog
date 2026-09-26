@@ -1,7 +1,9 @@
 import type {NextConfig} from 'next'
+import {initOpenNextCloudflareForDev} from '@opennextjs/cloudflare'
 
 const nextConfig: NextConfig = {
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -10,5 +12,7 @@ const nextConfig: NextConfig = {
     ],
   },
 }
+
+initOpenNextCloudflareForDev()
 
 export default nextConfig

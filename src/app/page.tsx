@@ -1,11 +1,32 @@
+import type {Metadata} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import {Footer} from '@/components/Footer'
 import {Header} from '@/components/Header'
+import {SITE_DESCRIPTION} from '@/lib/site'
 import {PostImage} from '@/components/PostImage'
 import {getPosts, getSettings} from '@/sanity/queries'
 
 export const revalidate = 60
+
+const pageTitle = 'kent blog｜大型犬と暮らす、フリーランス父の記録'
+
+export const metadata: Metadata = {
+  title: {absolute: pageTitle},
+  description: SITE_DESCRIPTION,
+  alternates: {canonical: '/'},
+  openGraph: {
+    title: pageTitle,
+    description: SITE_DESCRIPTION,
+    type: 'website',
+    url: '/',
+  },
+  twitter: {
+    card: 'summary',
+    title: pageTitle,
+    description: SITE_DESCRIPTION,
+  },
+}
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat('ja-JP', {

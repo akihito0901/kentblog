@@ -7,6 +7,7 @@ import {Header} from '@/components/Header'
 import {InstagramCta} from '@/components/InstagramCta'
 import {PostImage} from '@/components/PostImage'
 import {fallbackPosts} from '@/sanity/fallback'
+import {urlFor} from '@/sanity/image'
 import {getPost, getSettings} from '@/sanity/queries'
 
 export const revalidate = 60
@@ -24,6 +25,15 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   const title = post.seoTitle || post.title
   const description = post.seoDescription || post.excerpt
   const canonicalPath = `/blog/${post.slug}`
+  const socialImage = post.mainImage?.asset?._ref
+    ? urlFor(post.mainImage)
+        .width(1200)
+        .height(630)
+        .fit('crop')
+        .format('jpg')
+        .quality(82)
+        .url()
+    : post.fallbackImage
   return {
     title,
     description,
@@ -34,11 +44,13 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
       type: 'article',
       url: canonicalPath,
       publishedTime: post.publishedAt,
+      images: socialImage ? [{url: socialImage, width: 1200, height: 630, alt: post.title}] : undefined,
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title,
       description,
+      images: socialImage ? [socialImage] : undefined,
     },
   }
 }

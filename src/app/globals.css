@@ -1137,10 +1137,22 @@ input {
   text-underline-offset: 0.2em;
 }
 
+.body-image-figure {
+  margin: 2em 0;
+}
+
 .body-image {
+  display: block;
   width: 100%;
   height: auto;
-  margin: 2em 0;
+}
+
+.body-image-figure figcaption {
+  margin-top: 0.65rem;
+  color: var(--text-light);
+  font-size: 0.82em;
+  line-height: 1.7;
+  text-align: center;
 }
 
 .not-found {

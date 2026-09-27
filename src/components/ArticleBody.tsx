@@ -29,14 +29,23 @@ const components: PortableTextComponents = {
     image: ({value}) => {
       if (!value?.asset?._ref) return null
       return (
-        <Image
-          className="body-image"
-          src={urlFor(value).width(1200).fit('max').url()}
-          alt={value.alt || '記事内の画像'}
-          width={1200}
-          height={800}
-          sizes="(max-width: 820px) 100vw, 760px"
-        />
+        <figure className="body-image-figure">
+          <Image
+            className="body-image"
+            src={urlFor(value)
+              .width(1200)
+              .height(675)
+              .fit('crop')
+              .auto('format')
+              .quality(78)
+              .url()}
+            alt={value.alt || '記事内の画像'}
+            width={1200}
+            height={675}
+            sizes="(max-width: 820px) 100vw, 760px"
+          />
+          {value.caption && <figcaption>{value.caption}</figcaption>}
+        </figure>
       )
     },
   },

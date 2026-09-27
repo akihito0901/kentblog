@@ -42,10 +42,19 @@ export const postType = defineType({
     }),
     defineField({
       name: 'mainImage',
-      title: 'メイン画像',
+      title: 'アイキャッチ画像（横長16:9）',
+      description:
+        'iPhoneの縦写真でもOKです。アップロード後に鉛筆アイコンから、残したい被写体へ切り抜き位置を合わせてください。',
       type: 'image',
       options: {hotspot: true},
-      fields: [defineField({name: 'alt', title: '画像の説明', type: 'string'})],
+      fields: [
+        defineField({
+          name: 'alt',
+          title: '画像の説明（SEO・読み上げ用）',
+          type: 'string',
+          validation: (rule) => rule.required().warning('画像の内容を短く入力してください。'),
+        }),
+      ],
     }),
     defineField({
       name: 'featured',
@@ -78,9 +87,24 @@ export const postType = defineType({
           },
         }),
         defineArrayMember({
+          title: 'H2下の横長画像（16:9）',
           type: 'image',
+          description:
+            '関連する「見出し2」の直後に追加してください。縦写真は切り抜き位置を調整できます。',
           options: {hotspot: true},
-          fields: [defineField({name: 'alt', title: '画像の説明', type: 'string'})],
+          fields: [
+            defineField({
+              name: 'alt',
+              title: '画像の説明（SEO・読み上げ用）',
+              type: 'string',
+              validation: (rule) => rule.required().warning('画像の内容を短く入力してください。'),
+            }),
+            defineField({
+              name: 'caption',
+              title: '画像下の補足（任意）',
+              type: 'string',
+            }),
+          ],
         }),
       ],
       validation: (rule) => rule.required(),

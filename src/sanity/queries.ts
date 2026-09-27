@@ -12,7 +12,7 @@ const postsQuery = defineQuery(`*[_type == "post" && defined(slug.current)] | or
   publishedAt,
   featured,
   category->{title, label, "slug": slug.current},
-  mainImage{asset, alt},
+  mainImage{asset, alt, crop, hotspot},
   body,
   seoTitle,
   seoDescription
@@ -26,7 +26,7 @@ const postQuery = defineQuery(`*[_type == "post" && slug.current == $slug][0] {
   publishedAt,
   featured,
   category->{title, label, "slug": slug.current},
-  mainImage{asset, alt},
+  mainImage{asset, alt, crop, hotspot},
   body,
   seoTitle,
   seoDescription

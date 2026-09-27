@@ -1,6 +1,8 @@
 export type SanityImageValue = {
   asset?: {_ref?: string; _type?: string}
   alt?: string
+  crop?: {top: number; bottom: number; left: number; right: number}
+  hotspot?: {x: number; y: number; width: number; height: number}
 }
 
 export type Category = {

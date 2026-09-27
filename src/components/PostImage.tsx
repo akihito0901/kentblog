@@ -10,7 +10,13 @@ type Props = {
 
 export function PostImage({post, className, priority = false}: Props) {
   const sanityImage = post.mainImage?.asset?._ref
-    ? urlFor(post.mainImage).width(1200).height(675).fit('crop').url()
+    ? urlFor(post.mainImage)
+        .width(1200)
+        .height(675)
+        .fit('crop')
+        .auto('format')
+        .quality(78)
+        .url()
     : null
   const src = sanityImage || post.fallbackImage || '/images/article-dog-work.svg'
 

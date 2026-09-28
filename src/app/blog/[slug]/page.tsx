@@ -6,6 +6,7 @@ import {Footer} from '@/components/Footer'
 import {Header} from '@/components/Header'
 import {InstagramCta} from '@/components/InstagramCta'
 import {PostImage} from '@/components/PostImage'
+import {categoryName} from '@/lib/category'
 import {fallbackPosts} from '@/sanity/fallback'
 import {urlFor} from '@/sanity/image'
 import {getPost, getPosts, getSettings} from '@/sanity/queries'
@@ -104,15 +105,15 @@ export default async function BlogPost({params}: Props) {
 
   return (
     <>
-      <Header siteTitle={settings.siteTitle} tagline={settings.tagline} />
+      <Header siteTitle={settings.siteTitle} tagline="大型犬と、働く父の暮らし" />
       <main className="main-area" id="main-content">
         <div className="container">
-          <p className="breadcrumb"><Link href="/">HOME</Link><span>/</span>{post.category.label}<span>/</span>{post.title}</p>
+          <p className="breadcrumb"><Link href="/">ホーム</Link><span>/</span>{categoryName(post.category)}<span>/</span>{post.title}</p>
           <article className="article-page">
             <header className="article-header">
               <div className="post-meta">
                 <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
-                <span className="category">{post.category.label}</span>
+                <span className="category">{categoryName(post.category)}</span>
               </div>
               <h1 className="article-title">{post.title}</h1>
               <p className="article-lead">{post.excerpt}</p>
@@ -125,7 +126,7 @@ export default async function BlogPost({params}: Props) {
               {recommendedPosts.length > 0 && (
                 <section className="recommended-posts" aria-labelledby="recommended-heading">
                   <div className="recommended-posts-header">
-                    <p className="recommended-posts-kicker">RECOMMENDED</p>
+                    <p className="recommended-posts-kicker">あわせて読みたい</p>
                     <h2 id="recommended-heading">おすすめ記事</h2>
                   </div>
                   <div className="recommended-post-grid">
@@ -139,7 +140,7 @@ export default async function BlogPost({params}: Props) {
                           className="recommended-post-image"
                         />
                         <div className="recommended-post-copy">
-                          <span className="recommended-post-category">{item.category.label}</span>
+                          <span className="recommended-post-category">{categoryName(item.category)}</span>
                           <h3>{item.title}</h3>
                           <p>{item.excerpt}</p>
                           <span className="recommended-post-link">記事を読む <span aria-hidden="true">→</span></span>

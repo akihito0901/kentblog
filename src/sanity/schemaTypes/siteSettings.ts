@@ -16,7 +16,7 @@ export const siteSettingsType = defineType({
       name: 'tagline',
       title: '英語の短い説明',
       type: 'string',
-      initialValue: 'Big dog, freelance & family life',
+      initialValue: '大型犬と、働く父の暮らし',
     }),
     defineField({
       name: 'profileName',

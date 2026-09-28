@@ -5,6 +5,7 @@ import {Footer} from '@/components/Footer'
 import {Header} from '@/components/Header'
 import {SITE_DESCRIPTION} from '@/lib/site'
 import {PostImage} from '@/components/PostImage'
+import {categoryName} from '@/lib/category'
 import {getPosts, getSettings} from '@/sanity/queries'
 
 export const revalidate = 60
@@ -42,7 +43,7 @@ export default async function Home() {
 
   return (
     <>
-      <Header siteTitle={settings.siteTitle} tagline={settings.tagline} />
+      <Header siteTitle={settings.siteTitle} tagline="大型犬と、働く父の暮らし" />
       <main className="main-area" id="main-content">
         <div className="container">
           <section className="featured-grid" aria-label="おすすめ記事">
@@ -50,12 +51,12 @@ export default async function Home() {
               <article className="featured-card fade-up" id={post.category.slug} key={post._id}>
                 <Link className="featured-media" href={`/blog/${post.slug}`}>
                   <PostImage post={post} priority />
-                  <span className="featured-label">{post.category.label}</span>
+                  <span className="featured-label">{categoryName(post.category)}</span>
                 </Link>
                 <div className="featured-body">
                   <h2 className="featured-title"><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2>
                   <p className="featured-kicker">{post.excerpt}</p>
-                  <Link className="text-link" href={`/blog/${post.slug}`}>READ MORE</Link>
+                  <Link className="text-link" href={`/blog/${post.slug}`}>続きを読む</Link>
                 </div>
               </article>
             ))}
@@ -63,17 +64,17 @@ export default async function Home() {
 
           <div className="content-grid">
             <section className="content-column" aria-labelledby="latest-heading">
-              <h1 className="section-heading" id="latest-heading">Latest articles</h1>
+              <h1 className="section-heading" id="latest-heading">新着記事</h1>
               <div className="post-list">
                 {posts.map((post) => (
                   <article className="post-item fade-up" id={`post-${post.category.slug}`} key={post._id}>
                     <div className="post-meta">
                       <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
-                      <a className="category" href={`#${post.category.slug}`}>{post.category.label}</a>
+                      <a className="category" href={`#${post.category.slug}`}>{categoryName(post.category)}</a>
                     </div>
                     <h2 className="post-title"><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2>
                     <p className="post-excerpt">{post.excerpt}</p>
-                    <Link className="post-more" href={`/blog/${post.slug}`}>READ MORE</Link>
+                    <Link className="post-more" href={`/blog/${post.slug}`}>続きを読む</Link>
                   </article>
                 ))}
               </div>
@@ -82,10 +83,10 @@ export default async function Home() {
             <aside className="sidebar" aria-label="サイドバー">
               <section className="sidebar-section profile fade-up">
                 <div className="avatar">
-                  <Image src="/images/profile-kent.jpg" alt="Kentと子どもと2頭のハスキー" width={240} height={240} />
+                  <Image src="/images/profile-kent.jpg" alt="ケントと子どもと2頭のハスキー" width={240} height={240} />
                 </div>
-                <h2 className="profile-name">{settings.profileName}</h2>
-                <p className="profile-role">Freelance / Dog dad</p>
+                <h2 className="profile-name">ケント</h2>
+                <p className="profile-role">フリーランス／ハスキーと暮らす父</p>
                 <p className="profile-text">{settings.profileText}</p>
                 <a className="profile-link" href={settings.instagram.url} target="_blank" rel="noreferrer">
                   @{settings.instagram.handle}を見る&nbsp; →
@@ -93,7 +94,7 @@ export default async function Home() {
               </section>
 
               <section className="sidebar-section fade-up">
-                <h2 className="widget-title">Popular articles</h2>
+                <h2 className="widget-title">おすすめ記事</h2>
                 <ol className="popular-list">
                   {posts.slice(0, 4).map((post) => (
                     <li key={post._id}><Link href={`/blog/${post.slug}`}>{post.title}</Link></li>
@@ -102,17 +103,17 @@ export default async function Home() {
               </section>
 
               <section className="sidebar-section fade-up" aria-labelledby="tags-heading">
-                <h2 className="widget-title" id="tags-heading">Topics</h2>
+                <h2 className="widget-title" id="tags-heading">カテゴリー</h2>
                 <div className="tag-list">
                   {[...new Map(posts.map((post) => [post.category.slug, post.category])).values()].map((category) => (
-                    <a href={`#${category.slug}`} key={category.slug}>{category.title}</a>
+                    <a href={`#${category.slug}`} key={category.slug}>{categoryName(category)}</a>
                   ))}
                   <a href="#about">父の暮らし</a>
                 </div>
               </section>
 
               <section className="newsletter studio-guide fade-up">
-                <h2 className="widget-title">Write a new post</h2>
+                <h2 className="widget-title">記事を書く</h2>
                 <p>記事の追加やInstagramの数字変更は、編集室からできます。</p>
                 <Link className="studio-link" href="/studio">編集室を開く →</Link>
               </section>

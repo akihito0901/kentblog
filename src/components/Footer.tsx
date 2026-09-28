@@ -10,11 +10,11 @@ export function Footer() {
         </div>
         <div>
           <nav className="footer-links" aria-label="フッターナビゲーション">
-            <a href="#about">ABOUT</a>
-            <Link href="/studio">STUDIO</Link>
-            <a href="https://instagram.com/kents_nft/" target="_blank" rel="noreferrer">INSTAGRAM</a>
+            <a href="#about">このブログについて</a>
+            <Link href="/studio">編集室</Link>
+            <a href="https://instagram.com/kents_nft/" target="_blank" rel="noreferrer">インスタグラム</a>
           </nav>
-          <p className="copyright">© {new Date().getFullYear()} kent blog. All rights reserved.</p>
+          <p className="copyright">© {new Date().getFullYear()} kent blog.</p>
         </div>
       </div>
     </footer>

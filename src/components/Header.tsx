@@ -4,12 +4,12 @@ import Link from 'next/link'
 import {useState} from 'react'
 
 const navItems = [
-  {label: 'HOME', icon: '⌂', href: '/'},
-  {label: 'FREELANCE', icon: '↗', href: '/#freelance'},
-  {label: 'SIDE JOB', icon: '＋', href: '/#side-job'},
-  {label: 'DOG', icon: '●', href: '/#dog-food'},
-  {label: 'DIY', icon: '◇', href: '/#diy'},
-  {label: 'STUDIO', icon: '✎', href: '/studio'},
+  {label: 'ホーム', icon: '⌂', href: '/'},
+  {label: 'フリーランス', icon: '↗', href: '/#freelance'},
+  {label: '副業', icon: '＋', href: '/#side-job'},
+  {label: '犬・ハスキー', icon: '●', href: '/#dog-food'},
+  {label: '犬のDIY', icon: '◇', href: '/#diy'},
+  {label: '編集室', icon: '✎', href: '/studio'},
 ]
 
 export function Header({siteTitle, tagline}: {siteTitle: string; tagline: string}) {

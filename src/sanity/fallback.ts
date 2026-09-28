@@ -22,8 +22,8 @@ function heading(key: string, text: string, style: 'h2' | 'h3' = 'h2') {
 
 export const defaultSettings: SiteSettings = {
   siteTitle: 'kent blog',
-  tagline: 'Big dog, freelance & family life',
-  profileName: 'Kent',
+  tagline: '大型犬と、働く父の暮らし',
+  profileName: 'ケント',
   profileText:
     '大型犬と家族で暮らす、フリーランスの父です。副業の始め方、ドッグフード選び、犬と快適に暮らすためのDIYを、等身大で書いています。',
   instagram: {

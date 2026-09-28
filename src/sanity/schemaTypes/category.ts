@@ -22,7 +22,7 @@ export const categoryType = defineType({
     defineField({
       name: 'label',
       title: '英語ラベル',
-      description: '例：DOG FOOD、DIY、SIDE JOB',
+      description: '例：ドッグフード、犬のDIY、副業',
       type: 'string',
       validation: (rule) => rule.required(),
     }),

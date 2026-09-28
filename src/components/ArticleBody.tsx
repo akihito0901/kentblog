@@ -81,11 +81,11 @@ export function ArticleBody({value}: {value: Array<Record<string, unknown>>}) {
         <aside className="article-question" aria-label="読者の悩み">
           <Image
             className="article-question-image"
-            src="/images/profile-kent-dog.svg"
+            src="/images/reader-question.png"
             alt=""
-            width={116}
-            height={116}
-            sizes="(max-width: 640px) 76px, 116px"
+            width={533}
+            height={511}
+            sizes="(max-width: 480px) 56px, (max-width: 640px) 76px, 116px"
           />
           <p>{openingLine}</p>
         </aside>

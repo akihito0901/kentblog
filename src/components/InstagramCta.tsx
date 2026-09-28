@@ -7,7 +7,7 @@ export function InstagramCta({instagram}: {instagram: InstagramSettings}) {
       <div className="instagram-profile">
         <Image
           className="instagram-avatar"
-          src="/images/profile-kent-dog.svg"
+          src="/images/profile-kent.jpg"
           alt={`${instagram.displayName}のプロフィール画像`}
           width={152}
           height={152}

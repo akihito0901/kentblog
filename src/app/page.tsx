@@ -82,7 +82,7 @@ export default async function Home() {
             <aside className="sidebar" aria-label="サイドバー">
               <section className="sidebar-section profile fade-up">
                 <div className="avatar">
-                  <Image src="/images/profile-kent-dog.svg" alt="Kentと大型犬" width={240} height={240} />
+                  <Image src="/images/profile-kent.jpg" alt="Kentと子どもと2頭のハスキー" width={240} height={240} />
                 </div>
                 <h2 className="profile-name">{settings.profileName}</h2>
                 <p className="profile-role">Freelance / Dog dad</p>

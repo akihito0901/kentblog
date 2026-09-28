@@ -8,7 +8,8 @@ import {InstagramCta} from '@/components/InstagramCta'
 import {PostImage} from '@/components/PostImage'
 import {fallbackPosts} from '@/sanity/fallback'
 import {urlFor} from '@/sanity/image'
-import {getPost, getSettings} from '@/sanity/queries'
+import {getPost, getPosts, getSettings} from '@/sanity/queries'
+import type {Post} from '@/sanity/types'
 
 export const revalidate = 60
 
@@ -63,10 +64,43 @@ function formatDate(date: string) {
   }).format(new Date(date)).replaceAll('/', '.')
 }
 
+const recommendedPostSlugs = [
+  'large-dog-food-guide',
+  'big-dog-home-diy',
+  'siberian-husky-care-guide',
+  'large-dog-pros-cons',
+]
+
+const recommendedPostImages: Record<string, string> = {
+  'large-dog-food-guide': '/images/featured-dogfood.svg',
+  'big-dog-home-diy': '/images/featured-diy.svg',
+}
+
+function getRecommendedPosts(posts: Post[], currentSlug: string) {
+  const prioritized = recommendedPostSlugs
+    .map((recommendedSlug) => posts.find((item) => item.slug === recommendedSlug))
+    .filter((item): item is Post => Boolean(item))
+  const remaining = posts.filter(
+    (item) => !recommendedPostSlugs.includes(item.slug),
+  )
+
+  return [...prioritized, ...remaining]
+    .filter((item, index, items) => (
+      item.slug !== currentSlug
+      && items.findIndex((candidate) => candidate.slug === item.slug) === index
+    ))
+    .slice(0, 2)
+}
+
 export default async function BlogPost({params}: Props) {
   const {slug} = await params
-  const [post, settings] = await Promise.all([getPost(slug), getSettings()])
+  const [post, settings, posts] = await Promise.all([
+    getPost(slug),
+    getSettings(),
+    getPosts(),
+  ])
   if (!post) notFound()
+  const recommendedPosts = getRecommendedPosts(posts, post.slug)
 
   return (
     <>
@@ -88,11 +122,33 @@ export default async function BlogPost({params}: Props) {
 
             <div className="article-body">
               <ArticleBody value={post.body} />
-              <section className="article-cta" aria-labelledby="cta-heading">
-                <h2 id="cta-heading">犬との暮らしを、もっと楽しく。</h2>
-                <p>副業、ドッグフード、DIYの新しい記事も読んでみてください。</p>
-                <Link className="button" href="/">新着記事を見る</Link>
-              </section>
+              {recommendedPosts.length > 0 && (
+                <section className="recommended-posts" aria-labelledby="recommended-heading">
+                  <div className="recommended-posts-header">
+                    <p className="recommended-posts-kicker">RECOMMENDED</p>
+                    <h2 id="recommended-heading">おすすめ記事</h2>
+                  </div>
+                  <div className="recommended-post-grid">
+                    {recommendedPosts.map((item) => (
+                      <Link className="recommended-post-card" href={`/blog/${item.slug}`} key={item._id}>
+                        <PostImage
+                          post={{
+                            ...item,
+                            fallbackImage: recommendedPostImages[item.slug] || item.fallbackImage,
+                          }}
+                          className="recommended-post-image"
+                        />
+                        <div className="recommended-post-copy">
+                          <span className="recommended-post-category">{item.category.label}</span>
+                          <h3>{item.title}</h3>
+                          <p>{item.excerpt}</p>
+                          <span className="recommended-post-link">記事を読む <span aria-hidden="true">→</span></span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
               <InstagramCta instagram={settings.instagram} />
             </div>
           </article>
